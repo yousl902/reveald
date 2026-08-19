@@ -373,6 +373,9 @@ func (qb *QueryBuilder) WithRuntimeMappings(runtimeMappings map[string]types.Run
 // and returns only the top hit per group (optionally with inner_hits).
 // Pass nil to clear a previously set collapse.
 //
+// Total hit count reflects matching documents, not groups
+// use a cardinality aggregation for group count
+//
 // Example:
 //
 //	builder.WithCollapse(&types.FieldCollapse{Field: "customer.id"})
